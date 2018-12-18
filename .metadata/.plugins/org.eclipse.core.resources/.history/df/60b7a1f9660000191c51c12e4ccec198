@@ -1,0 +1,32 @@
+package examples;
+
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class HeadLessBrowser 
+{	
+	public static void main(String[] args) throws Exception 
+	{
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("window-size = 1400,800");
+		options.addArguments("headless");
+		 
+		WebDriver driver = new ChromeDriver(options);
+		driver.get("www.google.com");
+		
+		TakesScreenshot camera =(TakesScreenshot) driver;
+		File screens = camera.getScreenshotAs(OutputType.FILE);
+		File destFile = new File("C:\\Users\\chprasad\\Desktop\\New folder (2)\\samples\\screens");
+		FileUtils.copyFile(screens, destFile);
+		
+		
+		
+	}
+}
