@@ -34,9 +34,6 @@ public class HeadLessBrowser
 		File destFile = new File("C:\\Users\\chprasad\\Desktop\\New folder (2)\\samples\\screens\\headLess_"+name+".jpg");
 		FileUtils.copyFile(screens, destFile);
 		
-		System.out.println("code repo");
-		System.out.println("first code repo");
-		
 		
 		
 	}
